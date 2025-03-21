@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://commentListView.title">
+    <layout>
+        <component id="messageList"
+                   class="com.vaadin.flow.component.messages.MessageList"
+                   css="width: 100%"/>
+    </layout>
+</view>

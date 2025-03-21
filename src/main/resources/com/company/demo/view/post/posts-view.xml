@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://postListView.title"
+      focusComponent="postsDataGrid">
+    <data>
+        <collection id="postsDc"
+                    class="com.company.demo.entity.Post">
+            <loader id="postsDl" readOnly="true"/>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <button id="readCommentsBtn" action="postsDataGrid.readComments"/>
+        <dataGrid id="postsDataGrid"
+                  width="100%"
+                  minHeight="20em"
+                  dataContainer="postsDc"
+                  themeNames="wrap-cell-content"
+                  columnReorderingAllowed="true">
+            <actions>
+                <action id="readComments"
+                        text="Comments" icon="COMMENTS"
+                        type="list_itemTracking"
+                        shortcutCombination="ENTER"/>
+            </actions>
+            <columns resizable="true">
+                <column property="title"/>
+                <column property="body" flexGrow="2"/>
+                <column property="views" autoWidth="true" flexGrow="0"/>
+                <column property="reactions" autoWidth="true" flexGrow="0"/>
+            </columns>
+        </dataGrid>
+    </layout>
+</view>
