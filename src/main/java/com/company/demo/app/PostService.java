@@ -82,8 +82,7 @@ public class PostService {
     }
 
     public String fetchPostImageUrl(Post post) {
-        return IMAGE_URL
-                .formatted(RandomUtils.insecure().randomInt(0, 0xFFFFFF + 1), post.getTitle());
+        return "images/post-image.png";
     }
 
     private record PostDto(List<Post> posts) {
