@@ -12,19 +12,11 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
-        <button id="readCommentsBtn" action="postsDataGrid.readComments"/>
         <dataGrid id="postsDataGrid"
                   width="100%"
-                  minHeight="20em"
+                  allRowsVisible="true"
                   dataContainer="postsDc"
-                  themeNames="wrap-cell-content"
-                  columnReorderingAllowed="true">
-            <actions>
-                <action id="readComments"
-                        text="Comments" icon="COMMENTS"
-                        type="list_itemTracking"
-                        shortcutCombination="ENTER"/>
-            </actions>
+                  themeNames="wrap-cell-content">
             <columns resizable="true">
                 <column property="title"/>
                 <column property="body" flexGrow="2"/>
