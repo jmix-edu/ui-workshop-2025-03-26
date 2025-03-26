@@ -1,42 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<mainView xmlns="http://jmix.io/schema/flowui/main-view"
+<view xmlns="http://jmix.io/schema/flowui/view"
           title="msg://MainView.title">
     <actions>
         <action id="logoutAction" type="logout"/>
     </actions>
-    <appLayout>
-        <navigationBar>
-            <header id="header" classNames="jmix-main-view-header">
-                <drawerToggle id="drawerToggle"
-                              classNames="jmix-main-view-drawer-toggle"
-                              themeNames="contrast"
-                              ariaLabel="msg://drawerToggle.ariaLabel"/>
-                <h1 id="viewTitle" classNames="jmix-main-view-title"/>
-            </header>
-        </navigationBar>
-        <drawerLayout>
-            <section id="section" classNames="jmix-main-view-section">
-                <h2 id="applicationTitle"
-                    classNames="jmix-main-view-application-title">
-                    <anchor id="baseLink"
-                            href="."
-                            text="msg://applicationTitle.text"
-                            classNames="jmix-main-view-application-title-base-link"/>
-                </h2>
+    <layout alignItems="CENTER" padding="false">
+        <header id="header" classNames="jmix-main-view-header">
+            <div id="headerContentWrapper" classNames="jmix-main-view-header-content-wrapper">
+                <anchor id="baseLink"
+                        href="."
+                        classNames="jmix-main-view-application-title-top">
+                    <image id="logoImage"
+                           resource="icons/icon.png"
+                           width="var(--lumo-size-s)"
+                           height="var(--lumo-size-s)"/>
+                    <h2 id="applicationTitle"
+                        text="msg://applicationTitle.text"/>
+                </anchor>
+
+                <flexLayout alignItems="CENTER" css="gap: var(--lumo-space-m)">
+                    <userIndicator id="userIndicator"/>
+                    <button id="logoutButton"
+                            action="logoutAction"
+                            classNames="jmix-logout-button"/>
+                </flexLayout>
+            </div>
+        </header>
+
+        <div id="layoutWrapper" classNames="jmix-main-view-layout-wrapper">
+
+            <vbox id="sidePanel" classNames="jmix-main-view-side-panel" padding="false">
+                <avatar id="userAvatar" classNames="jmix-main-view-user-avatar"/>
+
                 <nav id="navigation"
                      classNames="jmix-main-view-navigation"
                      ariaLabel="msg://navigation.ariaLabel">
                     <listMenu id="menu"/>
                 </nav>
-                <footer id="footer" classNames="jmix-main-view-footer">
-                    <userIndicator id="userIndicator"/>
-                    <button id="logoutButton"
-                            action="logoutAction"
-                            classNames="jmix-logout-button"/>
-                </footer>
-            </section>
-        </drawerLayout>
-        <initialLayout>
-        </initialLayout>
-    </appLayout>
-</mainView>
+            </vbox>
+
+            <div id="contentWrapper" classNames="jmix-main-view-content-wrapper"/>
+
+            <div id="additionalColumn" classNames="jmix-main-view-additional-column">
+                <div text="msg://loremIpsum"/>
+            </div>
+        </div>
+    </layout>
+</view>

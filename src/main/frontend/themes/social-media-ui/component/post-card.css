@@ -1,0 +1,38 @@
+.post-card {
+    background-color: var(--lumo-base-color);
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    border-radius: var(--lumo-border-radius-l);
+    box-shadow: var(--lumo-box-shadow-xs);
+
+    overflow: hidden;
+}
+
+.post-body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--lumo-space-m);
+
+    padding: var(--lumo-space-m);
+
+    white-space: normal;
+}
+
+.post-footer {
+    display: flex;
+    align-items: center;
+    gap: var(--lumo-space-m);
+    padding: 0 var(--lumo-space-m) var(--lumo-space-m);
+}
+
+.post-info-icon {
+    --vaadin-button-text-color: var(--lumo-tertiary-text-color);
+}
+
+.post-info-icon.views {
+    margin-inline-start: auto;
+}

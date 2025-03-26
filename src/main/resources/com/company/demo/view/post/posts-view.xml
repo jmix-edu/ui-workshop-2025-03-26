@@ -11,17 +11,17 @@
     <facets>
         <dataLoadCoordinator auto="true"/>
     </facets>
-    <layout>
+    <layout classNames="posts-view">
         <dataGrid id="postsDataGrid"
                   width="100%"
                   allRowsVisible="true"
                   dataContainer="postsDc"
-                  themeNames="wrap-cell-content">
+                  themeNames="no-border no-row-borders"
+                  selectionMode="NONE">
             <columns resizable="true">
-                <column property="title"/>
-                <column property="body" flexGrow="2"/>
-                <column property="views" autoWidth="true" flexGrow="0"/>
-                <column property="reactions" autoWidth="true" flexGrow="0"/>
+                <column key="content">
+                    <fragmentRenderer class="com.company.demo.component.renderer.PostRenderer"/>
+                </column>
             </columns>
         </dataGrid>
     </layout>

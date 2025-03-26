@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fragment xmlns="http://jmix.io/schema/flowui/fragment">
+    <data>
+        <instance id="postDc" class="com.company.demo.entity.Post"/>
+    </data>
+    <content>
+        <div id="root" classNames="post-card">
+            <image id="image" classNames="post-image"/>
+            <div id="body" classNames="post-body">
+                <h4 id="bodyHeader"
+                    dataContainer="postDc" property="title"
+                    classNames="post-body-header"/>
+                <div id="bodyText"
+                     dataContainer="postDc" property="body"
+                     classNames="bodyText"/>
+            </div>
+            <div id="footer" classNames="post-footer">
+                <button id="likesBtn"
+                        icon="THUMBS_UP_O"
+                        classNames="post-info-icon likes" themeNames="tertiary-inline"/>
+                <button id="dislikesBtn"
+                        icon="THUMBS_DOWN_O"
+                        classNames="post-info-icon dislikes" themeNames="tertiary-inline"/>
+                <button id="commentsBtn"
+                        icon="COMMENTS_O"
+                        classNames="post-info-icon comments" themeNames="tertiary-inline"/>
+                <button id="viewsBtn"
+                        icon="EYE"
+                        classNames="post-info-icon views" themeNames="tertiary-inline"/>
+            </div>
+        </div>
+    </content>
+</fragment>
